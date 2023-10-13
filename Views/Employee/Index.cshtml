@@ -1,0 +1,218 @@
+﻿@model IPagedList<EmpManagementMVC.Models.EmployeeMaster>
+@*@model IEnumerable<EmpManagementMVC.Models.tbl_EmployeeMaster>*@
+@using PagedList
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    .leftMv {
+      
+       margin-left: -250px;
+    }
+</style>
+@*@using(Html.BeginForm("Index", "Employee", FormMethod.Get)) { 
+    <p>
+        @Html.TextBox("Searching")<input type="submit" value="Search" />
+    </p>
+}*@
+<div class="leftMv">
+    <h2>Employee Details</h2>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+        </div>
+        <div>
+            @using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+            {
+                <p>
+                    @Html.TextBox("Searching")<input type="submit" value="Search" class="btn btn-primary" />
+                </p>
+            }
+        </div>
+    </div>
+    <table class="table table-hover table-responsive table-bordered table-striped navbar-text text-justify">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].EmployeeCode)*@
+                Employee Code
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].FirstName)*@
+                First name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].LastName)*@
+                Last Name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].CountryName)*@
+                Country
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].StateName)*@
+                State
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].CityName)*@
+                City
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].EmailAddress)*@
+                Email Address
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].MobileNumber)*@
+                Mobile Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].PanNumber)*@
+                Pan Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].PassportNumber)*@
+                Passport Number
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].ProfileImage)*@
+                Profile Picture
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].Gender)*@
+                Gender
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].IsActive)*@
+                Status
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].DateOfBirth)*@
+                Date of Birth
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].DateOfJoinee)*@
+                Date Of Join
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model[0].CreatedDate)*@
+                Created Date
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model[0].UpdatedDate)
+            </th>*@
+            @*<th>
+            @Html.DisplayNameFor(model => model[0].IsDeleted)
+        </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model[0].DeletedDate)
+            </th>*@
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Details</th>
+        </tr>
+        @if(Model.Count()==0)
+        { 
+            <tr>
+                <td colspan="3" style="color:red">No match any documents</td>
+            </tr>
+        }
+        else { 
+
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MobileNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PanNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassportNumber)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ProfileImage)*@
+                    <div style="width:100px; height:100px;">
+                        <img src="@Url.Content(item.ProfileImage)" alt="Profile Image" style="max-width:100%; max-height:100px;" />
+                    </div>
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>*@
+            <td>
+                @if (item.IsActive == 1)
+                {
+                    @Html.Raw("Active")
+                }
+                else
+                {
+                    @Html.Raw("Inactive")
+                }
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfJoinee)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>*@
+                @*<td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>*@
+                @*<td>
+            @Html.DisplayFor(modelItem => item.DeletedDate)
+        </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Row_Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Row_Id }, new { @class = "btn btn-success" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Row_Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+        
+        }
+    </table>
+
+    <div class="pagination-container text-right">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded })
+
+    </div>
+
+</div>

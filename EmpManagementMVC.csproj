@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A590A319-79CD-4B21-92D4-507EBDF737A4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmpManagementMVC</RootNamespace>
+    <AssemblyName>EmpManagementMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ImageResizer.4.2.8\lib\net45\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stp_Emp_GetCitiesByStateId_Result.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stp_Emp_GetCountryData_Result.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stp_Emp_GetEmployeeData_Result.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stp_Emp_GetEmployeesByFirstName_Result.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stp_Emp_GetStatesByCountryId_Result.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblpic.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_City.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_CountryName.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_EmployeeMaster.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_State.cs">
+      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="JS\Default.js" />
+    <Content Include="Models\EmployeeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmployeeModel.Context.cs</LastGenOutput>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\EmployeeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+      <LastGenOutput>EmployeeModel.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\EmployeeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EmployeeModel.edmx.diagram">
+      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="uploads\0a5283d8-0068-41e2-89d1-6f4d9d11eec2images %283%29.jpg" />
+    <Content Include="uploads\0e086ad8-438a-40c0-a6c9-b6cda33d9fec.jpg" />
+    <Content Include="uploads\0e7818ac-964c-4038-882a-926c9280e640images %281%29.jpg" />
+    <Content Include="uploads\0f7324c5-9abf-43f1-9f9a-4b00a0faf954images %283%29.jpg" />
+    <Content Include="uploads\12ce8f66-2dd3-4fe1-8a37-9bac5f2f4439Untitled %283%29.jpg" />
+    <Content Include="uploads\1321b877-b377-4d6b-b41f-749341f73cd5photo.jfif" />
+    <Content Include="uploads\16b46ee7-e636-41f9-8c6e-5edafb46b758images %281%29.jpg" />
+    <Content Include="uploads\1a8c83ef-d6f3-499d-93ee-19a194851911images %283%29.jpg" />
+    <Content Include="uploads\1c399972-1161-4ff1-916d-df5cdb265ec7images %281%29.jpg" />
+    <Content Include="uploads\1eaeef30-bfc5-449d-a4fc-14eb7ede34b8images %283%29.jpg" />
+    <Content Include="uploads\20ed7c42-1895-48d8-81f8-cf6ed73341c3images %281%29.jpg" />
+    <Content Include="uploads\219a7ae7-cb25-451d-9e07-146fff6d11be.jpg" />
+    <Content Include="uploads\236cb4f4-dc09-44f5-bf19-07235896deb8images %281%29.jpg" />
+    <Content Include="uploads\282fee4e-7eae-4cfb-8c4e-8092d2d8d4e9.jpg" />
+    <Content Include="uploads\29e19f06-5b8c-4bc4-98ed-305621a341f7Untitled %284%29.jpg" />
+    <Content Include="uploads\2af4d5cc-dd0b-4480-a979-e0773c6babf2Untitled %284%29.jpg" />
+    <Content Include="uploads\2d4bcafd-3e6c-4a2d-934f-0337a46e8c21testimg.PNG" />
+    <Content Include="uploads\2df2db10-cf33-414c-ada9-067c3ad38d89images %281%29.jpg" />
+    <Content Include="uploads\2efa659c-0ecf-4d18-be6d-c4a184bedfa9images %281%29.jpg" />
+    <Content Include="uploads\30c5225e-80a2-4028-b48e-1e1f902e7ae8Untitled %284%29.jpg" />
+    <Content Include="uploads\321c7e94-d836-4cb0-bc2d-70ad1a7a6040images.jpg" />
+    <Content Include="uploads\32c7b186-ffca-4ca1-9511-b006650a5d69images %282%29.jpg" />
+    <Content Include="uploads\339f061c-3a05-4e6b-9f0e-71db941b484cimages %282%29.jpg" />
+    <Content Include="uploads\36a9029d-3313-430f-8152-85ac182991c9Untitled %284%29.jpg" />
+    <Content Include="uploads\38cec3e8-1ce0-46c3-b5a5-68e470154cd1.jpg" />
+    <Content Include="uploads\3c6d01ee-6cb5-42ed-8615-94f39614cc64images %281%29.jpg" />
+    <Content Include="uploads\3cb69d0f-c5b4-42e6-90a0-932208381597.jpg" />
+    <Content Include="uploads\3d24b5ab-7aac-4211-97cb-772ad524d180.jpg" />
+    <Content Include="uploads\3f391262-bf6d-4c49-a403-e6201502daddimages.jpg" />
+    <Content Include="uploads\3fd9259a-4f47-44a1-8eaf-660226c0e2e8.jpg" />
+    <Content Include="uploads\3feb7ba7-146b-4ee9-b7ca-917bce721d15WhatsApp Image 2023-09-25 at 12.11.16 PM.jpeg" />
+    <Content Include="uploads\40ff22ac-bb86-48df-bb89-fd98a2e0ca41Untitled %284%29.jpg" />
+    <Content Include="uploads\4181e3bc-f180-4a61-95a3-e67519799903technical_nduction.PNG" />
+    <Content Include="uploads\41ca631f-3f4f-4f75-9797-5137d5b29756.jpg" />
+    <Content Include="uploads\42c9e0ad-4bc8-4802-8583-49b8639329e6photo.jfif" />
+    <Content Include="uploads\436960a6-ff53-4378-9585-ed7844d9a52a.jpg" />
+    <Content Include="uploads\444907bb-db3f-48f8-949d-fca1921c0231technical_nduction.PNG" />
+    <Content Include="uploads\465e7ceb-86da-4ccf-a75f-41d3af951a5aimages %283%29.jpg" />
+    <Content Include="uploads\4db2db5c-167c-4b96-8b63-18cf3a4db662photo.jfif" />
+    <Content Include="uploads\4f8a5a71-be88-42f8-ba39-9f271e4802fdimages %282%29.jpg" />
+    <Content Include="uploads\50b0c22a-117f-4af5-87b1-5fb3304bef63images %282%29.jpg" />
+    <Content Include="uploads\51563b28-a9e1-493e-9081-126072098bc8images.jpg" />
+    <Content Include="uploads\51b74d3b-6708-48f7-9797-46eb9c88a5d9images %281%29.jpg" />
+    <Content Include="uploads\53afa263-7454-486c-8c5a-7463345cd2f9images %281%29.jpg" />
+    <Content Include="uploads\54479532-d7ff-41dd-8da1-bc0e0c5e0d70WhatsApp Image 2023-09-27 at 6.09.08 PM.jpeg" />
+    <Content Include="uploads\5620a9fe-a1e8-47be-bafb-2292b491e5daWhatsApp Image 2023-09-25 at 12.11.16 PM %281%29.jpeg" />
+    <Content Include="uploads\5ac6a57f-8ad0-4f58-9cec-116b8c8e5ff9images.jfif" />
+    <Content Include="uploads\5b259166-003b-494b-a9e7-69ce3a58b7e7.jpg" />
+    <Content Include="uploads\5c708b92-1cdc-4362-918a-3f2b70015b3dUntitled %284%29.jpg" />
+    <Content Include="uploads\60746620-05b4-45f0-b3ad-955013a2d557WhatsApp Image 2023-09-25 at 12.11.16 PM.jpeg" />
+    <Content Include="uploads\61b07af4-6105-4d70-af80-dd46c9c6db64.jpg" />
+    <Content Include="uploads\64e4f8d1-3fd1-4f7c-b12c-d92a3bcc5c60images.jfif" />
+    <Content Include="uploads\65909eb5-2b86-4605-943b-ef5fa06d4dfcUntitled %284%29.jpg" />
+    <Content Include="uploads\685e581c-4ae0-46ba-9cc7-33896b7927f3images %283%29.jpg" />
+    <Content Include="uploads\69d69c70-65a4-4efd-aba1-d6ff9069287b.jpg" />
+    <Content Include="uploads\6a833853-b124-400a-be93-f3196a9d2a9eimages %282%29.jpg" />
+    <Content Include="uploads\6aa54391-9aab-4500-835b-d2fc665f3341photo.jfif" />
+    <Content Include="uploads\6c603e15-1ebf-41d0-90c7-4294979500ffimages %281%29.jpg" />
+    <Content Include="uploads\74e5e0be-c099-4c86-9c9c-44e2dbdc3129photo.jfif" />
+    <Content Include="uploads\7589d972-05de-4ae5-a382-6468b6b542ceUntitled %284%29.jpg" />
+    <Content Include="uploads\77491280-d2c2-4488-8210-c16e588e5d98images %282%29.jpg" />
+    <Content Include="uploads\807e87c4-1331-46b1-989c-29c0d961dbae.jpg" />
+    <Content Include="uploads\814bf866-b527-4547-b84b-8b88d2b9d853images %283%29.jpg" />
+    <Content Include="uploads\8d52ca35-8859-4848-bde5-f8dda529766cphoto.jfif" />
+    <Content Include="uploads\92a69364-d8a8-4629-b9d2-b5373b75f4c9images %281%29.jpg" />
+    <Content Include="uploads\9a4862cc-a159-4c35-9c10-97cc75ae8094images %283%29.jpg" />
+    <Content Include="uploads\9d7e88be-cbce-4954-821d-f0ccc4ea88faimages %282%29.jpg" />
+    <Content Include="uploads\a26585aa-9a17-4a2a-9de0-4bf1be33330bUntitled %284%29.jpg" />
+    <Content Include="uploads\a32f29f2-8866-413f-b0a3-e8766b1eb478images %281%29.jpg" />
+    <Content Include="uploads\a5d59a82-ee12-46eb-9841-1b1ad80f36a2images %282%29.jpg" />
+    <Content Include="uploads\a7c35646-ae31-4e68-8fc1-e54d077343b6technical_nduction.PNG" />
+    <Content Include="uploads\aa0b46a4-09f8-4272-b6a3-b41de984919fUntitled %284%29.jpg" />
+    <Content Include="uploads\aa15ab35-cb10-416b-be40-1013697e333eGrade.PNG" />
+    <Content Include="uploads\aaaf2244-982a-4af5-8421-5332a0937b25compress.jpg" />
+    <Content Include="uploads\ad1c7c19-3023-4ff1-aca3-c60948ddcc72images %282%29.jpg" />
+    <Content Include="uploads\af30a325-437c-4151-8622-74223b5a4ffetechnical_nduction.PNG" />
+    <Content Include="uploads\b27c4695-f986-4508-ba70-2fecbf126e81images %283%29.jpg" />
+    <Content Include="uploads\b34261d1-4d28-4a52-a4e9-49b52325a980.jpg" />
+    <Content Include="uploads\b5fd873d-3701-4b26-acdb-9bd22992724aimages %282%29.jpg" />
+    <Content Include="uploads\b6087d51-684d-46f8-aae1-eff3aa83e1e1iconclnder.png" />
+    <Content Include="uploads\b7987b71-4b0c-487a-bdb8-0c68e6de8a22images %281%29.jpg" />
+    <Content Include="uploads\c0eb6ea1-b1a4-44f5-8b91-5a9ba9c0b84eimages %282%29.jpg" />
+    <Content Include="uploads\c158ffc8-0b04-468a-9f84-ac49987174a8photo.jfif" />
+    <Content Include="uploads\c4800ede-242b-46f0-bfcc-43cbfe808795Untitled %284%29.jpg" />
+    <Content Include="uploads\c4cf1609-a524-4328-8717-48f7ee2198ea.jpg" />
+    <Content Include="uploads\c4d3972f-4218-4cdc-bfb1-0bbe729bd9ce.jpg" />
+    <Content Include="uploads\cc348ba3-9bd0-4e61-801b-04e49cef8c87.jpg" />
+    <Content Include="uploads\d28fe236-bd46-4f0a-a752-a0e14a85e16dWhatsApp Image 2023-09-27 at 6.09.08 PM.jpeg" />
+    <Content Include="uploads\d7a5910a-1e07-4627-8947-91c9e439831fphoto.jfif" />
+    <Content Include="uploads\da67aae9-6dc8-40cb-8c62-7b7cda657028.jpg" />
+    <Content Include="uploads\dbde5829-263d-44b6-abf5-d479521ec850technical_nduction.PNG" />
+    <Content Include="uploads\dc6c2dd7-dab2-4b49-a019-832ecbbf7ac0Untitled %282%29.jpg" />
+    <Content Include="uploads\e25be13c-5b0a-40cf-8969-2fbdda742f2btechnical_nduction.PNG" />
+    <Content Include="uploads\e2b6939e-8aa6-418b-8510-b68e685d5aa9images %281%29.jpg" />
+    <Content Include="uploads\e3024def-37fd-40bc-9100-d24815575e71images %281%29.jpg" />
+    <Content Include="uploads\e5cf45cb-a9c4-4ed2-836e-d39ecbe5044aWhatsApp Image 2023-09-27 at 6.09.08 PM.jpeg" />
+    <Content Include="uploads\e8682788-b651-49ba-a0ff-9f082b61355810691802.jpg" />
+    <Content Include="uploads\ec64f62b-8f42-4627-a8bd-5676a5d08c40images %281%29.jpg" />
+    <Content Include="uploads\ec6c68e9-9089-46a2-af0c-58ed41dc4cc3images %281%29.jpg" />
+    <Content Include="uploads\edefb759-0418-4fe1-a587-6a42e2fb3a4eimages %282%29.jpg" />
+    <Content Include="uploads\edf9eefb-a878-42c0-8715-ddcd1a9da4deGrade.PNG" />
+    <Content Include="uploads\eea5830d-65f4-4ca0-815d-097d3155ddf8technical_nduction.PNG" />
+    <Content Include="uploads\f183ab3b-d5d2-4020-b071-3bf4f9529d08compress.jpg" />
+    <Content Include="uploads\f3ea4208-aa96-4852-86d7-fb160e02584c.jpg" />
+    <Content Include="uploads\f5dcae49-d5e7-4221-a28e-3fc561839398images %282%29.jpg" />
+    <Content Include="uploads\f92aed3f-000b-4f8c-9f80-2d9a2bbcd88ctechnical_nduction.PNG" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="uploads\9680cf89-5cab-4c1b-8291-4cdedf62c811" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58699</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58699/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

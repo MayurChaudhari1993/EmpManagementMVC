@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Neosoft_Mayur_ChaudhariModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_City">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="StateId" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_CountryName">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_EmployeeMaster">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeCode" Type="varchar" MaxLength="8" StoreGeneratedPattern="Computed" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryId" Type="bigint" />
+          <Property Name="StateId" Type="bigint" />
+          <Property Name="CityId" Type="bigint" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="PanNumber" Type="varchar" MaxLength="12" />
+          <Property Name="PassportNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProfileImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="DateOfJoinee" Type="date" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="UpdatedDate" Type="date" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Neosoft_Mayur_Chaudhari.dbo.tbl_State' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_State">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="int" />
+          <Property Name="CountryId" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblpic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_CityId' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_CityId">
+          <Property Name="CityId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_CityIdA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_CityIdA">
+          <Property Name="CityId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_Country' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_Country">
+          <Property Name="CountryId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_CountryA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_CountryA">
+          <Property Name="CountryId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_StateId' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_StateId">
+          <Property Name="StateId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Neosoft_Mayur_Chaudhari.dbo.v_StateIdA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_StateIdA">
+          <Property Name="StateId" Type="int" />
+        </EntityType>-->
+        <Function Name="stp_emp_CheckDuplicateEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="operation" Type="nvarchar" Mode="In" />
+          <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="stp_Emp_CheckDuplicateMobileNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MobNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="Operation" Type="nvarchar" Mode="In" />
+          <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="stp_emp_CheckDuplicatePANNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PanNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="operation" Type="nvarchar" Mode="In" />
+          <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="stp_Emp_CheckDuplicatePassportNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PassportNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="operation" Type="nvarchar" Mode="In" />
+          <Parameter Name="Result" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="stp_Emp_DeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeCode" Type="int" Mode="In" />
+        </Function>
+        <Function Name="stp_Emp_GetCitiesByStateId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StateId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="stp_Emp_GetCountryData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="stp_Emp_GetEmployeeData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="stp_Emp_GetEmployeesByFirstName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchKeyword" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="stp_Emp_GetStatesByCountryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="stp_Emp_UpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeCode" Type="int" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PanNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassportNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="DateOfJoinee" Type="date" Mode="In" />
+          <Parameter Name="Imagename" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryId" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateId" Type="nvarchar" Mode="In" />
+          <Parameter Name="CityId" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="str_Emp_InsertEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PanNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassportNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="DateOfJoining" Type="date" Mode="In" />
+          <Parameter Name="Country" Type="int" Mode="In" />
+          <Parameter Name="State" Type="int" Mode="In" />
+          <Parameter Name="City" Type="int" Mode="In" />
+          <Parameter Name="Imagename" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="Neosoft_Mayur_ChaudhariModelStoreContainer">
+          <EntitySet Name="tbl_City" EntityType="Self.tbl_City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CountryName" EntityType="Self.tbl_CountryName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmployeeMaster" EntityType="Self.tbl_EmployeeMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblpic" EntityType="Self.tblpic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_State" EntityType="Self.tbl_State" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_State].[Row_Id] AS [Row_Id], 
+    [tbl_State].[StateId] AS [StateId], 
+    [tbl_State].[CountryId] AS [CountryId], 
+    [tbl_State].[StateName] AS [StateName]
+    FROM [dbo].[tbl_State] AS [tbl_State]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Neosoft_Mayur_ChaudhariModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_City">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="StateId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_CountryName">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryId" Type="Int32" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_EmployeeMaster">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int64" />
+          <Property Name="StateId" Type="Int64" />
+          <Property Name="CityId" Type="Int64" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PanNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateOfJoinee" Type="DateTime" Precision="0" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblpic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_State">
+          <Key>
+            <PropertyRef Name="Row_Id" />
+          </Key>
+          <Property Name="Row_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int32" />
+          <Property Name="CountryId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Neosoft_Mayur_ChaudhariEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_City" EntityType="Self.tbl_City" />
+          <EntitySet Name="tbl_CountryName" EntityType="Self.tbl_CountryName" />
+          <EntitySet Name="tbl_EmployeeMaster" EntityType="Self.tbl_EmployeeMaster" />
+          <EntitySet Name="tblpics" EntityType="Self.tblpic" />
+          <EntitySet Name="tbl_State" EntityType="Self.tbl_State" />
+          <FunctionImport Name="stp_emp_CheckDuplicateEmail">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="operation" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_CheckDuplicateMobileNumber">
+            <Parameter Name="MobNumber" Mode="In" Type="String" />
+            <Parameter Name="Operation" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="stp_emp_CheckDuplicatePANNumber">
+            <Parameter Name="PanNumber" Mode="In" Type="String" />
+            <Parameter Name="operation" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_CheckDuplicatePassportNumber">
+            <Parameter Name="PassportNumber" Mode="In" Type="String" />
+            <Parameter Name="operation" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_DeleteEmployee">
+            <Parameter Name="EmployeeCode" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_GetCitiesByStateId" ReturnType="Collection(Neosoft_Mayur_ChaudhariModel.stp_Emp_GetCitiesByStateId_Result)">
+            <Parameter Name="StateId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_GetCountryData" ReturnType="Collection(Neosoft_Mayur_ChaudhariModel.stp_Emp_GetCountryData_Result)" />
+          <FunctionImport Name="stp_Emp_GetEmployeeData" ReturnType="Collection(Neosoft_Mayur_ChaudhariModel.stp_Emp_GetEmployeeData_Result)" />
+          <FunctionImport Name="stp_Emp_GetEmployeesByFirstName" ReturnType="Collection(Neosoft_Mayur_ChaudhariModel.stp_Emp_GetEmployeesByFirstName_Result)">
+            <Parameter Name="SearchKeyword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_GetStatesByCountryId" ReturnType="Collection(Neosoft_Mayur_ChaudhariModel.stp_Emp_GetStatesByCountryId_Result)">
+            <Parameter Name="CountryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="stp_Emp_UpdateEmployee">
+            <Parameter Name="EmployeeCode" Mode="In" Type="Int32" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="EmailAddress" Mode="In" Type="String" />
+            <Parameter Name="MobileNumber" Mode="In" Type="String" />
+            <Parameter Name="PanNumber" Mode="In" Type="String" />
+            <Parameter Name="PassportNumber" Mode="In" Type="String" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="DateOfJoinee" Mode="In" Type="DateTime" />
+            <Parameter Name="Imagename" Mode="In" Type="String" />
+            <Parameter Name="CountryId" Mode="In" Type="String" />
+            <Parameter Name="StateId" Mode="In" Type="String" />
+            <Parameter Name="CityId" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="str_Emp_InsertEmployee">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="MobileNumber" Mode="In" Type="String" />
+            <Parameter Name="PanNumber" Mode="In" Type="String" />
+            <Parameter Name="PassportNumber" Mode="In" Type="String" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="DateOfJoining" Mode="In" Type="DateTime" />
+            <Parameter Name="Country" Mode="In" Type="Int32" />
+            <Parameter Name="State" Mode="In" Type="Int32" />
+            <Parameter Name="City" Mode="In" Type="Int32" />
+            <Parameter Name="Imagename" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="stp_Emp_GetCitiesByStateId_Result">
+          <Property Type="Int32" Name="CityId" Nullable="true" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="stp_Emp_GetCountryData_Result">
+          <Property Type="String" Name="CountryName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CountryId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="stp_Emp_GetEmployeeData_Result">
+          <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PanNumber" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="PassportNumber" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfJoinee" Nullable="true" />
+          <Property Type="String" Name="CountryName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Int64" Name="CountryId" Nullable="true" />
+          <Property Type="Int64" Name="StateId" Nullable="true" />
+          <Property Type="Int64" Name="CityId" Nullable="true" />
+          <Property Type="String" Name="IsActive" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="ProfileImage" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="stp_Emp_GetEmployeesByFirstName_Result">
+          <Property Type="Int32" Name="Row_Id" Nullable="false" />
+          <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="8" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="CountryId" Nullable="true" />
+          <Property Type="Int64" Name="StateId" Nullable="true" />
+          <Property Type="Int64" Name="CityId" Nullable="true" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MobileNumber" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="PanNumber" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="PassportNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ProfileImage" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="DateTime" Name="DateOfJoinee" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="DeletedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="stp_Emp_GetStatesByCountryId_Result">
+          <Property Type="Int32" Name="StateId" Nullable="true" />
+          <Property Type="String" Name="StateName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Neosoft_Mayur_ChaudhariModelStoreContainer" CdmEntityContainer="Neosoft_Mayur_ChaudhariEntities">
+          <EntitySetMapping Name="tbl_City">
+            <EntityTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.tbl_City">
+              <MappingFragment StoreEntitySet="tbl_City">
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CountryName">
+            <EntityTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.tbl_CountryName">
+              <MappingFragment StoreEntitySet="tbl_CountryName">
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmployeeMaster">
+            <EntityTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.tbl_EmployeeMaster">
+              <MappingFragment StoreEntitySet="tbl_EmployeeMaster">
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PanNumber" ColumnName="PanNumber" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfJoinee" ColumnName="DateOfJoinee" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblpics">
+            <EntityTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.tblpic">
+              <MappingFragment StoreEntitySet="tblpic">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_State">
+            <EntityTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.tbl_State">
+              <MappingFragment StoreEntitySet="tbl_State">
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="stp_emp_CheckDuplicateEmail" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_emp_CheckDuplicateEmail" />
+          <FunctionImportMapping FunctionImportName="stp_Emp_CheckDuplicateMobileNumber" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_CheckDuplicateMobileNumber" />
+          <FunctionImportMapping FunctionImportName="stp_emp_CheckDuplicatePANNumber" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_emp_CheckDuplicatePANNumber" />
+          <FunctionImportMapping FunctionImportName="stp_Emp_CheckDuplicatePassportNumber" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_CheckDuplicatePassportNumber" />
+          <FunctionImportMapping FunctionImportName="stp_Emp_DeleteEmployee" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_DeleteEmployee" />
+          <FunctionImportMapping FunctionImportName="stp_Emp_GetCitiesByStateId" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_GetCitiesByStateId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.stp_Emp_GetCitiesByStateId_Result">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="stp_Emp_GetCountryData" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_GetCountryData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.stp_Emp_GetCountryData_Result">
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="stp_Emp_GetEmployeeData" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_GetEmployeeData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.stp_Emp_GetEmployeeData_Result">
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PanNumber" ColumnName="PanNumber" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfJoinee" ColumnName="DateOfJoinee" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="stp_Emp_GetEmployeesByFirstName" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_GetEmployeesByFirstName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.stp_Emp_GetEmployeesByFirstName_Result">
+                <ScalarProperty Name="Row_Id" ColumnName="Row_Id" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PanNumber" ColumnName="PanNumber" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="DateOfJoinee" ColumnName="DateOfJoinee" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="stp_Emp_GetStatesByCountryId" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_GetStatesByCountryId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Neosoft_Mayur_ChaudhariModel.stp_Emp_GetStatesByCountryId_Result">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="stp_Emp_UpdateEmployee" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.stp_Emp_UpdateEmployee" />
+          <FunctionImportMapping FunctionImportName="str_Emp_InsertEmployee" FunctionName="Neosoft_Mayur_ChaudhariModel.Store.str_Emp_InsertEmployee" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
